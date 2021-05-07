@@ -80,23 +80,23 @@ public class AndroidCalculatorPage {
 
         if(digit.equals('0')){
             driver.findElement(btnZero).click();
-        }else if(digit.equals("1")){
+        }else if(digit.equals('1')){
             driver.findElement(btnOne).click();
-        }else if(digit.equals("2")){
+        }else if(digit.equals('2')){
             driver.findElement(btnTwo).click();
-        }else if(digit.equals("3")){
+        }else if(digit.equals('3')){
             driver.findElement(btnThree).click();
-        }else if(digit.equals("4")){
+        }else if(digit.equals('4')){
             driver.findElement(btnFour).click();
-        }else if(digit.equals("5")){
+        }else if(digit.equals('5')){
             driver.findElement(btnFive).click();
-        }else if(digit.equals("6")){
+        }else if(digit.equals('6')){
             driver.findElement(btnSix).click();
-        }else if(digit.equals("7")){
+        }else if(digit.equals('7')){
             driver.findElement(btnSeven).click();
-        }else if(digit.equals("8")){
+        }else if(digit.equals('8')){
             driver.findElement(btnEight).click();
-        }else if(digit.equals("9")){
+        }else if(digit.equals('9')){
             driver.findElement(btnNine).click();
         }
     }
