@@ -11,6 +11,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class AndroidEmulatorRedmineLoginUITest extends BaseTest {
 
+
+
     @Test
     public void testLoginRedmineEmulatorNexusAndroid7(){
 
@@ -46,7 +48,6 @@ public class AndroidEmulatorRedmineLoginUITest extends BaseTest {
         RedmineHomePage redmineHomePage = redmineLoginPage.login("user", "bitnami1");
 
         redmineLandingPage.clickOnMobileMenu();
-
 
         String expectedUser = "user";
         String actualUser = redmineHomePage.getUserLoggedMobileEmulation();
