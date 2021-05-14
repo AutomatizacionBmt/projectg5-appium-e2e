@@ -30,6 +30,8 @@ public class AndroidCalculatorPage {
     private By txtResult = By.id("com.android.calculator2:id/result");
 
     public AndroidCalculatorPage(WebDriver driver){
+
+
         this.driver = driver;
     }
 
