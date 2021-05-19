@@ -2,6 +2,7 @@ package com.company.features;
 
 import com.company.base.BaseTest;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.offset.ElementOption;
@@ -70,5 +71,43 @@ public class AndroidEmulatorNativeApiDemoTest extends BaseTest {
 
         //Hola Johana
 
+    }
+
+    @Test
+    public void testSwipeDemoNexusAndroid7(){
+
+        DesiredCapabilities cap = new DesiredCapabilities();
+        cap.setCapability("automationName", "UiAutomator2");
+        cap.setCapability("platformName","Android");
+        cap.setCapability("platformVersion","7.0");
+        cap.setCapability("avd", "Nexus5Android7");
+        cap.setCapability("deviceName", "Nexus5Android7");
+        cap.setCapability("avdArgs", "-port 5557");
+
+        cap.setCapability("app",
+                "/Users/jhumbertoh/Proyectos/Publicos/projectg5-appium-e2e/resources/apks/ApiDemos-debug.apk");
+
+        configAppiumDriver(cap);
+
+        driver.findElementByXPath("//android.widget.TextView[@content-desc='Views']").click();
+        driver.findElementByAccessibilityId("Date Widgets").click();
+
+        AndroidDriver androidDriver = (AndroidDriver) driver;
+
+        androidDriver.findElementByAndroidUIAutomator("text(\"2. Inline\")").click();
+
+        androidDriver.findElementByXPath("//*[@content-desc=\"9\"]").click();
+
+        TouchAction touch = new TouchAction(driver);
+
+        WebElement first = driver.findElementByXPath("//*[@content-desc=\"15\"]");
+        WebElement second = driver.findElementByXPath("//*[@content-desc=\"45\"]");
+
+        touch.longPress(longPressOptions()
+                    .withElement(element(first))
+                    .withDuration(Duration.ofSeconds(2)))
+                .moveTo(element(second))
+                .release()
+                .perform();
     }
 }
